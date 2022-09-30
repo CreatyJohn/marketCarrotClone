@@ -17,7 +17,7 @@ class NextActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("test", MODE_PRIVATE)
         val id = sharedPreferences.getString("ID", "ERROR")
-        val pass = sharedPreferences.getString("PASS", "ERROR")
+        val pass = sharedPreferences.getString("NAME", "ERROR")
 
         binding.activityNextTvId.text = id
         binding.activityNextTvPass.text = pass

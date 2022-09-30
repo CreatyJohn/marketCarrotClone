@@ -27,6 +27,14 @@
             android:exported="false">
         </activity>
         <activity
+            android:name=".UserCheckSplash"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".LoginSplash"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

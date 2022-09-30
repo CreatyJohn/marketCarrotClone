@@ -1,7 +1,5 @@
 package com.example.marketcarrot
 
-import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -14,8 +12,6 @@ class MainActivity : AppCompatActivity() {
 
     /** view binding */
     private lateinit var binding: ActivityMainBinding
-    private lateinit var sharedPreferences: SharedPreferences
-    
 
     /** fragmentview.bottomNav */
     private val fl: FrameLayout by lazy {
@@ -39,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().add(fl.id, HomeFragment()).commit()
 
-        bn.setOnNavigationItemReselectedListener {
+        bn.setOnItemReselectedListener {
             replaceFragment(
                 when (it.itemId) {
                     R.id.menu_home -> HomeFragment()
@@ -49,25 +45,11 @@ class MainActivity : AppCompatActivity() {
                     else -> NeighborFragment()
                 }
             )
-            true
         }
 
-        /** SharedPreferences Code */
-        sharedPreferences = getSharedPreferences("test", MODE_PRIVATE)
+        Toast.makeText(this, "로그인이 필요합니다.",Toast.LENGTH_SHORT).show()
 
-        binding.activityMainBtn.setOnClickListener {
-            val id = binding.activityMainEtId.text.toString().toInt()
-            val pass = binding.activityMainEtPass.text.toString().toInt()
-
-            val editor : SharedPreferences.Editor = sharedPreferences.edit()
-            editor.putInt("ID", id)
-            editor.putInt("Password", pass)
-            editor.apply()
-
-            startActivity(Intent(this, NextActivity::class.java))
-        }
-
-        Toast.makeText(this, "onCreate",Toast.LENGTH_SHORT).show()
+        SplashScreen()
     }
 
     private fun replaceFragment(fragment: Fragment) {
