@@ -1,15 +1,16 @@
 package com.example.marketcarrot
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.example.marketcarrot.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-@Suppress("UNUSED_EXPRESSION")
 class MainActivity : AppCompatActivity() {
 
     /** view binding */
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     /** view binding setting in onCreate */
     override fun onCreate(savedInstanceState: Bundle?) {
+
         //binding super directory(root)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -33,6 +35,20 @@ class MainActivity : AppCompatActivity() {
 
         /** bottomNavigation setting in onCreate */
         //fragment section
+
+//        /** Animation of Navbar New Data badges*/
+//        var badge = bn.getOrCreateBadge(menuItemId)
+//        badge.isVisible = true
+//        // An icon only badge will be displayed unless a number is set:
+//        badge.number = 99
+//
+//        val badgeDrawable = bn.getBadge(menuItemId)
+//        if (badgeDrawable != null) {
+//            badgeDrawable.isVisible = false
+//            badgeDrawable.clearNumber()
+//        }
+//
+//        bn.removeBadge(menuItemId)
 
         supportFragmentManager.beginTransaction().add(fl.id, HomeFragment()).commit()
 
@@ -80,15 +96,13 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(fl.id, fragment).commit()
     }
 
+
+
     /**앱 시작마다 필요한 동네 GPS 설정*/
     override fun onStart() {
         super.onStart()
 
-        UserCheckSplash()
-
         startService(GpsTrackerService.getIntent(this@MainActivity))
-
-
 
         Toast.makeText(this, "onStart",Toast.LENGTH_SHORT).show()
 
