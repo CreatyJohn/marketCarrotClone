@@ -14,7 +14,5 @@ class UserCheckSplash : AppCompatActivity() {
         binding = ActivityUsercheckSplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
     }
 }

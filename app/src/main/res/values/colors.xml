@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="carrot">#FF7500</color>
-    <color name="gray">A9A9A9</color>
+    <color name="gray">#A9A9A9</color>
 
     <color name="colorPrimary">@color/carrot</color>
     <color name="colorPrimaryDark">@color/blue_5</color>
