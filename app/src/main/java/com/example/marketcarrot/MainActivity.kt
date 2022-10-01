@@ -1,15 +1,15 @@
 package com.example.marketcarrot
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
 import com.example.marketcarrot.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+@Suppress("UNUSED_EXPRESSION")
 class MainActivity : AppCompatActivity() {
 
     /** view binding */
@@ -36,7 +36,33 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().add(fl.id, HomeFragment()).commit()
 
-        bn.setOnItemReselectedListener {
+        BottomNavigationView.OnNavigationItemSelectedListener{ item ->
+            when (item.itemId) {
+                R.id.menu_home -> {
+                    HomeFragment()
+                    true
+                }
+                R.id.menu_chat -> {
+                    ChatFragment()
+                    true
+                }
+                R.id.menu_location -> {
+                    LocationFragment()
+                    true
+                }
+                R.id.menu_profile -> {
+                    ProfileFragment()
+                    true
+                }
+                R.id.menu_neighbor -> {
+                    NeighborFragment()
+                    true
+                }
+                else -> false
+            }
+        }
+
+        bn.setOnNavigationItemSelectedListener{
             replaceFragment(
                 when (it.itemId) {
                     R.id.menu_home -> HomeFragment()
@@ -46,8 +72,8 @@ class MainActivity : AppCompatActivity() {
                     else -> NeighborFragment()
                 }
             )
+            true
         }
-        Toast.makeText(this, "로그인이 필요합니다.",Toast.LENGTH_SHORT).show()
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -57,6 +83,8 @@ class MainActivity : AppCompatActivity() {
     /**앱 시작마다 필요한 동네 GPS 설정*/
     override fun onStart() {
         super.onStart()
+
+        UserCheckSplash()
 
         startService(GpsTrackerService.getIntent(this@MainActivity))
 
