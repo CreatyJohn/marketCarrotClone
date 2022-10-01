@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.marketcarrot.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -31,7 +33,6 @@ class MainActivity : AppCompatActivity() {
 
         /** bottomNavigation setting in onCreate */
         //fragment section
-        setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction().add(fl.id, HomeFragment()).commit()
 
@@ -46,10 +47,7 @@ class MainActivity : AppCompatActivity() {
                 }
             )
         }
-
         Toast.makeText(this, "로그인이 필요합니다.",Toast.LENGTH_SHORT).show()
-
-        SplashScreen()
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -62,7 +60,11 @@ class MainActivity : AppCompatActivity() {
 
         startService(GpsTrackerService.getIntent(this@MainActivity))
 
+
+
         Toast.makeText(this, "onStart",Toast.LENGTH_SHORT).show()
+
+        /** SplashScreen() */
     }
 
     /**어플의 기능을 정의하는 곳.. ex) 유저의 정보, 게시물을 정의할 예정 */
@@ -72,12 +74,21 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "onResume",Toast.LENGTH_SHORT).show()
     }
 
-    /** Remove regist.User Data, Stop GPSTrackerService Data */
+    /** Remove regist,User Data, Stop GPSTrackerService Data */
     override fun onStop() {
         super.onStop()
 
         GpsTrackerService.stopTracking(this@MainActivity)
 
+        Toast.makeText(this, "onStop",Toast.LENGTH_SHORT).show()
+
+    }
+
+    /** Remove regist,User Data */
+    override fun onDestroy() {
+        super.onDestroy()
+
+        Toast.makeText(this, "onDestroy",Toast.LENGTH_SHORT).show()
     }
 }
 
