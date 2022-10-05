@@ -21,11 +21,11 @@ class LoginSplash : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("test", MODE_PRIVATE)
 
         binding.activityMainBtn.setOnClickListener {
-            val id = binding.activityMainEtId.text.toString()
+            val num = binding.activityMainEtId.text.toString().toInt()
             val pass = binding.activityMainEtPass.text.toString()
 
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
-            editor.putString("ID", id)
+            editor.putInt("ID", num)
             editor.putString("PASS", pass)
             editor.apply()
 

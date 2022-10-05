@@ -16,7 +16,7 @@ class NextActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         sharedPreferences = getSharedPreferences("test", MODE_PRIVATE)
-        val id = sharedPreferences.getString("ID", "ERROR")
+        val id = sharedPreferences.getInt("NUM", -1).toString()
         val pass = sharedPreferences.getString("NAME", "ERROR")
 
         binding.activityNextTvId.text = id
