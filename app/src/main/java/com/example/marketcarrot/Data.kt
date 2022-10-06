@@ -3,7 +3,8 @@ package com.example.marketcarrot
 import androidx.annotation.DrawableRes
 
 data class Data(
-    val text: String,
-    @DrawableRes
-    val image: Int
+    var Image: Int,
+    var Title: String,
+    var Info: String,
+    var Price: String
 )

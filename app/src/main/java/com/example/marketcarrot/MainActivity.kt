@@ -2,11 +2,9 @@ package com.example.marketcarrot
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marketcarrot.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -25,6 +23,14 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.bn_main)
     }
 
+    /** Fragment에 RecyclerView를 적용시키기 위한 함수 */
+    private fun replaceFragment(homeFragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fl_main,homeFragment)
+        fragmentTransaction.commit()
+    }
+
     /** view binding setting in onCreate */
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -32,47 +38,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        replaceFragment(HomeFragment())
 
-        Log.d("LifeCycle", "OnCreate")
-
-        /** RecyclerView Data Adapting, Like a pointer(포인터 함수) */
-        val dataList: MutableList<Data> = mutableListOf(
-            Data("문 팝니다", R.drawable.im_1),
-            Data("책상 팝니다", R.drawable.im_2),
-            Data("자전거 팝니다", R.drawable.im_3),
-            Data("스팸 팝니다", R.drawable.im_4),
-            Data("전기자전거 팝니다", R.drawable.im_5),
-            Data("갤럭시 워치 팝니다", R.drawable.im_6),
-            Data("치마 팝니다", R.drawable.im_7),
-            Data("핸드폰 팝니다", R.drawable.im_8),
-            Data("애기 자전거 팝니다", R.drawable.im_9),
-            Data("난로 팝니다", R.drawable.im_10),
-            Data("캠핑장 팝니다", R.drawable.im_11),
-            Data("세탁기 팝니다", R.drawable.im_12),
-        )
-
-        val adapter = DataRVAdapter(dataList)
-        binding.rvList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        binding.rvList.adapter = adapter
-
-        /** bottomNavigation setting in onCreate */
-        //fragment section
-
-//        /** Animation of Navbar New Data badges*/
-//        var badge = bn.getOrCreateBadge(menuItemId)
-//        badge.isVisible = true
-//        // An icon only badge will be displayed unless a number is set:
-//        badge.number = 99
-//
-//        val badgeDrawable = bn.getBadge(menuItemId)
-//        if (badgeDrawable != null) {
-//            badgeDrawable.isVisible = false
-//            badgeDrawable.clearNumber()
-//        }
-//
-//        bn.removeBadge(menuItemId)
-
-        supportFragmentManager.beginTransaction().add(fl_main.id, HomeFragment()).commit()
+        supportFragmentManager.beginTransaction().add(fl_main.id, Fragment()).commit()
 
         BottomNavigationView.OnNavigationItemSelectedListener{ item ->
             when (item.itemId) {
@@ -112,10 +80,6 @@ class MainActivity : AppCompatActivity() {
             )
             true
         }
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(fl_main.id, fragment).commit()
     }
 
     /**앱 시작마다 필요한 동네 GPS 설정*/
