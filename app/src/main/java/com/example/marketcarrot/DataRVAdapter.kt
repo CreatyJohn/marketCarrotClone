@@ -45,6 +45,7 @@ class DataRVAdapter(val dataList: ArrayList<Data>, val checkList: ArrayList<chec
             tvTitle.text = dataList[position].Title
             tvInfo.text = dataList[position].Info
             tvPrice.text = dataList[position].Price
+            chkBox.isChecked = checkList[position].Checked
 
             if (ck == 1) {
                 chkBox.visibility = View.VISIBLE
