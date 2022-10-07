@@ -20,45 +20,6 @@
     <string name="id">ID</string>
     <string name="login">LOGIN</string>
     <string name="채팅">채팅</string>
-
-    <string name="title_a">이사가면서 해결해요</string>
-    <string name="title_b">이케아 수제 책상 (목제)</string>
-    <string name="title_c">MTB 자전거 3500-X</string>
-    <string name="title_d">스팸 10개 세트</string>
-    <string name="title_e">전기자전거 급처합니다</string>
-    <string name="title_f">갤럭시워치5 미개봉</string>
-    <string name="title_g">유니클로 치마 28사이즈</string>
-    <string name="title_h">갤럭시 S21 1년 중고</string>
-    <string name="title_i">유아용 자전거 3에 처분</string>
-    <string name="title_j">위디아 난로</string>
-    <string name="title_k">캠핑장 대여해드립니다!!</string>
-    <string name="title_l">LG 16년식 세탁기</string>
-
-    <string name="info_a">강동구 천호제3동</string>
-    <string name="info_b">송파구 풍납동</string>
-    <string name="info_c">강동구 성내동</string>
-    <string name="info_d">강동구 성내동</string>
-    <string name="info_e">강동구 암사동</string>
-    <string name="info_f">하남시 미사도</string>
-    <string name="info_g">명일동</string>
-    <string name="info_h">풍산동</string>
-    <string name="info_i">하남시 위례동</string>
-    <string name="info_j">강일동</string>
-    <string name="info_k">서울특별시 송파구</string>
-    <string name="info_l">송파구 방이2동</string>
-
-    <string name="price_a">20,000</string>
-    <string name="price_b">46,000</string>
-    <string name="price_c">82,000</string>
-    <string name="price_d">25,000</string>
-    <string name="price_e">120,000</string>
-    <string name="price_f">170,000</string>
-    <string name="price_g">7,000</string>
-    <string name="price_h">200,000</string>
-    <string name="price_i">30,000</string>
-    <string name="price_j">50,000</string>
-    <string name="price_k">30,000</string>
-    <string name="price_l">250,000</string>
     <string name="당근마켓" />
 
 </resources>

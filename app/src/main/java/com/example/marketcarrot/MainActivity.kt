@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import com.example.marketcarrot.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-//data class UserCheckStatus(val position: Int, var isChecked: Boolean)
-
 class MainActivity : AppCompatActivity() {
 
     /** view binding */
@@ -32,6 +30,24 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
+    /** 향후 데이터에서 서버를 받았을때 아래와 같은 ArrayList 형태로 받아서 CRUD를 구축하려고 함*/
+    val dataList: ArrayList<Data> = arrayListOf(
+
+        Data("이사가면서 해결해요, 브라운컬러", "강동구 천호제3동", "20,000", R.drawable.im_1),
+        Data("이케아 수제 책상 (목제)", "송파구 풍납동", "46,000", R.drawable.im_2),
+        Data("MTB 자전거 3500-X", "강동구 성내동", "82,000", R.drawable.im_3),
+        Data("스팸 10개 세트", "강동구 성내동","25,000", R.drawable.im_4),
+        Data("전기자전거 급처합니다.", "강동구 암사동","120,000", R.drawable.im_5),
+        Data("갤럭시워치5 미개봉", "하남시 미사동","170,000", R.drawable.im_6),
+        Data("유니클로 치마 28사이즈", "명일동", "7,000", R.drawable.im_7),
+        Data("갤럭시 S21 1년 중고", "풍산동", "200,000", R.drawable.im_8),
+        Data("유아용 자전거 3에 처분", "하남시 위례동", "30,000", R.drawable.im_9),
+        Data("위디아 난로", "강일동", "50,000", R.drawable.im_10),
+        Data("캠핑장 대여해드립니다!!", "서울특별시 송파구", "30,000", R.drawable.im_11),
+        Data("LG 16년식 세탁기", "송파구 방이2동", "250,000", R.drawable.im_12)
+
+    )
+
     /** view binding setting in onCreate */
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -42,6 +58,15 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(HomeFragment())
 
         supportFragmentManager.beginTransaction().add(fl_main.id, Fragment()).commit()
+
+        /** intent로 리스트데이터를 넘긴다. */
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(
+            R.id.listFrame,
+            HomeFragment()
+        )
+        transaction.commit()
+        intent.putExtra("DataList", dataList)
 
         BottomNavigationView.OnNavigationItemSelectedListener{ item ->
             when (item.itemId) {
@@ -97,6 +122,12 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         Toast.makeText(this, "onResume",Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+
+        Toast.makeText(this, "onRestart",Toast.LENGTH_SHORT).show()
     }
 
     /** Remove regist,User Data, Stop GPSTrackerService Data */
