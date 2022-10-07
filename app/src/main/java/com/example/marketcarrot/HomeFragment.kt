@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -26,6 +27,7 @@ class HomeFragment : Fragment() {
     private lateinit var adapter : DataRVAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataList: ArrayList<Data>
+    private lateinit var checkList: ArrayList<checkboxData>
 
     // 변수 선언 자료Id : Array<자료형>
     lateinit var imageId : Array<Int>
@@ -67,11 +69,13 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = DataRVAdapter(dataList)
+        adapter = DataRVAdapter(dataList, checkList)
         recyclerView.adapter = adapter
     }
-    
+
     private fun dataInitialize(){
+
+        checkList = arrayListOf<checkboxData>()
 
         /** 향후 데이터에서 서버를 받았을때 아래와 같은 ArrayList 형태로 받아서 CRUD를 구축하려고 함*/
 

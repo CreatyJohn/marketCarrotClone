@@ -8,7 +8,8 @@ import androidx.fragment.app.Fragment
 import com.example.marketcarrot.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-//data class HomeList(val name: String, val contents: String)
+//data class UserCheckStatus(val position: Int, var isChecked: Boolean)
+
 class MainActivity : AppCompatActivity() {
 
     /** view binding */
@@ -89,8 +90,6 @@ class MainActivity : AppCompatActivity() {
         startService(GpsTrackerService.getIntent(this@MainActivity))
 
         Toast.makeText(this, "시작합니다",Toast.LENGTH_SHORT).show()
-
-        /** SplashScreen() */
     }
 
     /**어플의 기능을 정의하는 곳.. ex) 유저의 정보, 게시물을 정의할 예정 */
