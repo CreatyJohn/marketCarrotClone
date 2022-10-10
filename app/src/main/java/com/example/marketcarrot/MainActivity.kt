@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        startService(GpsTrackerService.getIntent(this@MainActivity))
+//        startService(GpsTrackerService.getIntent(this@MainActivity))
 
         Toast.makeText(this, "시작합니다",Toast.LENGTH_SHORT).show()
     }
@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
 
-        GpsTrackerService.stopTracking(this@MainActivity)
+//        GpsTrackerService.stopTracking(this@MainActivity)
 
         Toast.makeText(this, "onStop",Toast.LENGTH_SHORT).show()
 
