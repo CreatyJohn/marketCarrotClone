@@ -4,7 +4,10 @@
     package="com.example.marketcarrot">
     <!-- GPS 구현을 위한 location access 코드 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 인터넷과 카메라를 내부로 사용하기 위해 반드시 필요한 퍼미션 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -20,19 +23,24 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
-        <activity
-            android:name=".NextActivity"
-            android:exported="false">
+            android:exported="true">
         </activity>
         <activity
             android:name=".UserCheckSplash"
-            android:exported="false">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data android:host="oauth"
+                    android:scheme="kakao21de26b357c402d6376672dcbda85911" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".LoginSplash"
-            android:exported="false">
+            android:exported="true">
         </activity>
         <activity
             android:name=".SplashScreen"

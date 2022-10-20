@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.marketcarrot.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*
 
-
 class HomeFragment : Fragment() {
 
     /** view binding for fragment */
@@ -36,14 +35,15 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var list: ArrayList<Data> = requireActivity().intent!!.extras!!.get("DataList") as ArrayList<Data>
+        val list: ArrayList<Data> = requireActivity().intent!!.extras!!.get("DataList") as ArrayList<Data>
         Log.e("HomeFragment", "Data List: ${list}")
 
         // Fragment에서 전달받은 list를 넘기면서 ListAdapter 생성
         dataRVAdapter = DataRVAdapter(list)
-        listView.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+        rv_recyclerview.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+
         // RecyclerView.adapter에 지정
-        listView.adapter = dataRVAdapter
+        rv_recyclerview.adapter = dataRVAdapter
     }
 
     override fun onDestroy() {

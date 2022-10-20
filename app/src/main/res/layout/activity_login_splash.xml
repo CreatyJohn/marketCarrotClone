@@ -1,33 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     android:gravity="center" >
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/activity_main_et_id"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/act_bar_custom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="휴대폰 번호를 입력하세요"
-        android:inputType="text" />
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white" >
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/activity_main_et_pass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="이름을 입력하세요"
-        android:inputType="text" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_goback"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="20sp"
+            android:gravity="center"
+            android:src="@drawable/ic_chevron_left_fill"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/activity_main_btn"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="시작하기" />
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="44sp"
+        android:text="네이버 아이디로 인증해주세요."
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/act_bar_custom" />
 
+    <TextView
+        android:id="@+id/tv_infologin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="18sp"
+        android:text="당근마켓은 소셜 로그인으로 가입해요. 정보는 안전하게\n보관되며 어디에도 공개되지 않아요."
+        android:textColor="@color/gray900"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
-</LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_naver_login"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_shape_naverlogin_bun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_infologin"
+        android:layout_marginTop="30sp"
+        android:text="네이버로 로그인하기"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="17sp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_kakao_login"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/rounded_shape_kakaologin_btn"
+        android:text="카카오로 로그인하기"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_naver_login" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

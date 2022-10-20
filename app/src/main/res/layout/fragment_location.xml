@@ -4,27 +4,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment" >
+    tools:context=".HomeFragment"
+    android:background="@color/gray400">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/act_bar_custom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
+        android:layout_height="57dp"
+        android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/fl_home"
-        android:background="@color/white" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tx_mylocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10sp"
+            android:layout_marginStart="15sp"
             android:gravity="center"
-            android:text="상일동"
+            android:text="MYLOCATION"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20dp"
@@ -49,7 +48,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_baseline_search2_24"
+                android:src="@drawable/ic_baseline_search_24_regular"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <androidx.appcompat.widget.AppCompatImageButton
@@ -57,7 +56,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/icons8_scan_qr_code_24"
+                android:src="@drawable/ic_scanner_fill"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <androidx.appcompat.widget.AppCompatImageButton
@@ -65,7 +64,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_baseline_bell_24"
+                android:src="@drawable/ic_notice_bell_fill"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
@@ -73,27 +72,17 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
-        android:id="@+id/fl_home"
+        android:id="@+id/fl_contents"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="210dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/act_bar_custom">
 
-        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent">-->
-
-        <!--            <androidx.recyclerview.widget.RecyclerView-->
-        <!--                android:id="@+id/listView"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
     </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,8 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="carrot">#FF7500</color>
+    <color name="carrot">#FF8A3D</color>
+    <color name="kakao_yellow">#FFE812</color>
     <color name="gray">#A9A9A9</color>
+    <color name="gray900">#212121</color>
+    <color name="gray400">#BDBDBD</color>
+    <color name="gray300">#E0E0E0</color>
+    <color name="naver_green">#2DB400</color>
 
     <color name="colorPrimary">@color/carrot</color>
     <color name="colorPrimaryDark">@color/blue_5</color>
