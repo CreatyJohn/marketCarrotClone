@@ -42,6 +42,10 @@ android {
         prefab = true
     }
 
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {

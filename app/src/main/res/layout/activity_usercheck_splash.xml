@@ -84,10 +84,10 @@
                 android:textSize="15dp" />
 
             <Button
-                android:id="@+id/uc_login_btn"
+                android:id="@+id/btn_login"
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="@android:color/transparent"
                 android:text="로그인"
                 android:textColor="#EF6C00"
                 android:textSize="15dp"

@@ -17,19 +17,35 @@ class UserCheckSplash : AppCompatActivity() {
         binding = ActivityUsercheckSplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val btn_start = findViewById<Button>(R.id.start_carrot_btn)
-        val btn_login = findViewById<Button>(R.id.uc_login_btn)
-
-        btn_start.setOnClickListener {
+        binding.startCarrotBtn.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
-            finish()
         }
 
-        btn_login.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             Toast.makeText(this,"로그인을 해주세요", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, LoginSplash::class.java))
-            finish()
         }
+    }
 
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+
+        finish()
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        finish()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        finish()
     }
 }
