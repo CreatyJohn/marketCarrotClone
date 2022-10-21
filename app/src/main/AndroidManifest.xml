@@ -26,6 +26,14 @@
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="oauth"
+                    android:scheme="kakao21de26b357c402d6376672dcbda85911" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".UserCheckSplash"
@@ -35,18 +43,7 @@
         </activity>
         <activity
             android:name=".LoginSplash"
-            android:exported="true"
-            android:launchMode="singleTop">
-
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:host="oauth"
-                    android:scheme="kakao21de26b357c402d6376672dcbda85911" />
-            </intent-filter>
-
+            android:exported="true">
         </activity>
         <activity
             android:name=".SplashScreen"

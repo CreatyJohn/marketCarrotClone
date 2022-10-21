@@ -44,13 +44,30 @@ class LoginSplash : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
                 KakaoLogin()
             }
-            if (isLoggedIn.value == true) {
-                finish()
-            } else {
-                finish()
-                startActivity(Intent(this, MainActivity::class.java))
-            }
+            startMain.invoke()
         }
+    }
+
+    val startMain : () -> Unit = {
+
+        if (isLoggedIn.value == true) {
+            finish()
+        } else {
+            finish()
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        Log.d(TAG, "onResume")
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        Log.d(TAG, "onStop")
     }
 
     override fun onDestroy() {

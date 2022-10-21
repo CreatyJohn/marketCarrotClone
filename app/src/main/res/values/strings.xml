@@ -26,5 +26,7 @@
     <!-- For Naver Login -->
     <string name="naver_client_id">client_id 값</string>
     <string name="naver_client_secret">client_secret 값</string>
+    <string name="카카오_로그아웃하기">카카오 로그아웃하기</string>
+    <string name="카카오_로그인하기">카카오 로그인하기</string>
 
 </resources>

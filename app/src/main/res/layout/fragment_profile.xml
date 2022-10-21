@@ -123,19 +123,35 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_kakao"
+            android:id="@+id/btn_kakaoIn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="@id/cl_profile"
             app:layout_constraintEnd_toEndOf="@id/cl_profile"
             app:layout_constraintBottom_toBottomOf="@id/cl_profile"
             app:layout_constraintTop_toBottomOf="@id/ll_profileinfo"
-            android:layout_marginEnd="15sp"
-            android:layout_marginStart="15sp"
-            android:text="카카오 로그아웃하기"
-            android:textColor="@color/gray900"
+            android:text="@string/카카오_로그인하기"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="15sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginStart="15sp"
+            android:background="@drawable/rounded_shape_kakaologin_btn"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_kakaoOut"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="@id/cl_profile"
+            app:layout_constraintEnd_toEndOf="@id/cl_profile"
+            app:layout_constraintBottom_toBottomOf="@id/cl_profile"
+            app:layout_constraintTop_toBottomOf="@id/ll_profileinfo"
+            android:text="@string/카카오_로그아웃하기"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginStart="15sp"
             android:background="@drawable/rounded_shape_kakaologin_btn"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
