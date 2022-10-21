@@ -65,7 +65,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="25dp"
             android:background="@drawable/ripple"
-            android:text="시작하기"
+            android:text="로그인해서 시작하기"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -77,21 +77,22 @@
             android:layout_marginTop="35sp">
 
             <TextView
+                android:id="@+id/tv_login"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="이미 계정이 있나요?"
-                android:textColor="#a9a9a9"
+                android:text="로그인을 해주세요"
+                android:textColor="@color/gray"
                 android:textSize="15dp" />
 
-            <Button
-                android:id="@+id/btn_login"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:text="로그인"
-                android:textColor="#EF6C00"
-                android:textSize="15dp"
-                android:textStyle="bold" />
+<!--            <Button-->
+<!--                android:id="@+id/btn_login"-->
+<!--                android:layout_width="55dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:text="로그인"-->
+<!--                android:textColor="#EF6C00"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textStyle="bold" />-->
 
         </LinearLayout>
 

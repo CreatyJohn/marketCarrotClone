@@ -2,12 +2,14 @@ package com.example.marketcarrot
 
 import android.app.Application
 import android.util.Log
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
+import kotlinx.android.synthetic.main.activity_login_splash.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import kotlin.coroutines.resume
@@ -16,7 +18,7 @@ import kotlin.coroutines.suspendCoroutine
 class KakaoAuthViewModel(application: Application) : AndroidViewModel(application) {
 
     companion object {
-        val TAG = "KAKAO"
+        val TAG = "KAKAOLOGIN"
     }
 
     private val context = application.applicationContext

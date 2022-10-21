@@ -22,8 +22,6 @@ class ProfileFragment : Fragment() {
     /** view binding for fragment */
     private var _binding : FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    var mainActivity: MainActivity? = null
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?
@@ -60,12 +58,11 @@ class ProfileFragment : Fragment() {
     }
 
     fun KakaoLoginCheck(viewModel: KakaoAuthViewModel){
+        val isLoggedIn = viewModel.isLoggedIn.asStateFlow()
 
-    val isLoggedIn = viewModel.isLoggedIn.asStateFlow()
+        val loginStatusInfoTitle = if (isLoggedIn.value) "카카오로 로그아웃하기" else "카카오로 로그인하기"
 
-    val loginStatusInfoTitle: String = if (isLoggedIn.value) "카카오로 로그아웃하기" else "카카오로 로그인하기"
-
-    binding.btnKakaoLogout.text = "${loginStatusInfoTitle}"
-    if (isLoggedIn.value) viewModel.kakaoLogin() else viewModel.kakaoLogout()
+        binding.btnKakaoLogout.text = loginStatusInfoTitle
+        if (isLoggedIn.value) viewModel.kakaoLogout() else viewModel.kakaoLogin()
     }
 }
