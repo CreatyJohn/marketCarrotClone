@@ -63,77 +63,75 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/act_bar_custom"
         app:layout_constraintBottom_toTopOf="@id/fl_home"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="@color/white">
 
         <LinearLayout
             android:id="@+id/ll_profileinfo"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:layout_margin="15sp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="@id/cl_profile"
             app:layout_constraintEnd_toEndOf="@id/cl_profile"
-            app:layout_constraintTop_toTopOf="@id/cl_profile"
-            android:layout_margin="10sp"
-            >
+            app:layout_constraintStart_toStartOf="@id/cl_profile"
+            app:layout_constraintTop_toTopOf="@id/cl_profile">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
                 android:id="@+id/iv_profile"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@mipmap/ic_launcher_round"
                 android:background="@drawable/round_outline_profile"
-                android:clipToOutline="true"/>
+                android:clipToOutline="true"
+                android:src="@mipmap/ic_launcher_round" />
 
             <LinearLayout
-                android:layout_width="235sp"
+                android:layout_width="230sp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="15sp"
                 android:orientation="vertical"
-                android:weightSum="2"
-                android:layout_marginStart="15sp">
+                android:weightSum="2">
 
                 <TextView
                     android:id="@+id/tv_username"
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="UserName"
-                    android:textSize="18dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:textStyle="bold"
+                    android:text="UserName"
                     android:textColor="@color/black"
-                    />
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_useremail"
-                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textSize="15dp"
+                    android:layout_weight="1"
                     android:gravity="top"
-                    />
+                    android:text="Email"
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/ic_chevron_right_regular"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_chevron_right_regular" />
 
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_kakao_logout"
+            android:id="@+id/btn_kakao"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="@id/cl_profile"
             app:layout_constraintEnd_toEndOf="@id/cl_profile"
             app:layout_constraintBottom_toBottomOf="@id/cl_profile"
             app:layout_constraintTop_toBottomOf="@id/ll_profileinfo"
-            android:layout_marginEnd="10sp"
-            android:layout_marginStart="10sp"
+            android:layout_marginEnd="15sp"
+            android:layout_marginStart="15sp"
             android:text="카카오 로그아웃하기"
             android:textColor="@color/gray900"
             android:textStyle="bold"
