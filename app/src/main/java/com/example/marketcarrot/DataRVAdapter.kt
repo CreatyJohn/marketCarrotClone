@@ -14,6 +14,7 @@ class DataRVAdapter(private var dataList: MutableList<Data>): RecyclerView.Adapt
     /** inner class로 viewHolder 정의 */
     inner class ListItemViewHolder(itemView: View?): RecyclerView.ViewHolder(itemView!!) {
 
+        /** ItemView */
         var ivImage : ImageView = itemView!!.findViewById(R.id.iv_Image)
         var tvTitle : TextView = itemView!!.findViewById(R.id.tv_Title)
         var tvInfo : TextView = itemView!!.findViewById(R.id.tv_Info)
@@ -42,6 +43,31 @@ class DataRVAdapter(private var dataList: MutableList<Data>): RecyclerView.Adapt
     override fun onBindViewHolder(holder: DataRVAdapter.ListItemViewHolder, position: Int) {
         Log.d("ListAdapter", "===== ===== onBindViewHolder ===== =====")
         holder.bind(dataList[position])
+    }
+
+    // 리사이클러뷰 갱신처리
+
+    var mPosition = 0
+
+    fun getPosition(): Int {
+        return mPosition
+    }
+
+    fun setPosition(position: Int) {
+        mPosition = position
+    }
+
+    fun additem(data: Data) {
+        dataList.add(data)
+        notifyDataSetChanged()
+    }
+
+    fun removeItem(position: Int) {
+        if(position > 0) {
+            dataList.removeAt(position)
+            notifyItemRemoved(position)
+            notifyDataSetChanged()
+        }
     }
 
 }

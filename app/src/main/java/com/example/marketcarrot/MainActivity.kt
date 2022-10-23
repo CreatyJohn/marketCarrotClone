@@ -7,6 +7,8 @@ import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.example.marketcarrot.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.fragment_location.*
+import net.daum.android.map.MapView
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().add(R.id.fl_main, Fragment()).commit()
 
-        /** intent? ??????? ???. */
+        /** intent */
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(
             R.id.fl_main,

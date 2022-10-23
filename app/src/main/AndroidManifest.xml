@@ -21,7 +21,13 @@
         android:roundIcon="@drawable/ic_baseline_carroticon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Marketcarrot"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="841e454f678916ca564040940fbacc3e"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -43,6 +49,10 @@
         </activity>
         <activity
             android:name=".LoginSplash"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".PutLocationSplash"
             android:exported="true">
         </activity>
         <activity

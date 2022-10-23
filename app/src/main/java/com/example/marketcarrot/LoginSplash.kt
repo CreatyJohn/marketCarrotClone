@@ -44,7 +44,11 @@ class LoginSplash : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
                 KakaoLogin()
             }
-            startMain.invoke()
+            if (isLoggedIn.value == true){
+                startMain.invoke()
+            } else {
+                startActivity(Intent(this, PutLocationSplash::class.java))
+            }
         }
     }
 

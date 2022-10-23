@@ -3,33 +3,23 @@ package com.example.marketcarrot
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.*
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import coil.api.load
 import com.example.marketcarrot.databinding.FragmentProfileBinding
-import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
-import com.kakao.sdk.common.model.ClientError
-import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 import com.bumptech.glide.Glide
-import com.kakao.sdk.friend.R.id.container
-import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment() {
 
@@ -39,9 +29,6 @@ class ProfileFragment : Fragment() {
     /** view binding for fragment */
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    lateinit var profileFragment: ProfileFragment
-    lateinit var mainActivity: MainActivity
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
