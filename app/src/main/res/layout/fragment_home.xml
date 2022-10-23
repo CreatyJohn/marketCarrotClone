@@ -19,11 +19,12 @@
         app:layout_constraintBottom_toTopOf="@+id/fl_home"
         android:background="@color/white">
 
-        <TextView
-            android:id="@+id/tx_mylocation"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_mylocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:background="@android:color/transparent"
             android:gravity="center"
             android:text="MYLOCATION"
             android:textAlignment="center"

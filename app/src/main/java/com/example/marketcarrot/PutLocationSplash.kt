@@ -1,5 +1,6 @@
 package com.example.marketcarrot
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
@@ -26,6 +27,7 @@ class PutLocationSplash : AppCompatActivity() {
 
         binding.btnMylocation.setOnClickListener {
             callKakaoKeyword("${search}")
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 
