@@ -15,4 +15,10 @@ object KakaoApiRetrofitClient {
             .build()
             .create(KakaoApiService::class.java)
     }
+
+    val mylocalService: KakaoMyLocalService by lazy {
+        retrofit
+            .build()
+            .create(KakaoMyLocalService::class.java)
+    }
 }

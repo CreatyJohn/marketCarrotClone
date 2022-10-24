@@ -19,8 +19,19 @@
         app:layout_constraintBottom_toTopOf="@+id/fl_home"
         android:background="@color/white">
 
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/btn_mylocation"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/carrot"-->
+<!--            android:gravity="center"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/linearLayout3"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/tv_mylocation"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_mylocation"
+            android:id="@+id/tv_mylocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"

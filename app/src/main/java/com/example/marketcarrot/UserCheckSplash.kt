@@ -19,10 +19,5 @@ class UserCheckSplash : AppCompatActivity() {
             startActivity(Intent(this, LoginSplash::class.java))
             finish()
         }
-
-//        binding.btnLogin.setOnClickListener {
-//            Toast.makeText(this,"로그인을 해주세요", Toast.LENGTH_SHORT).show()
-//
-//        }
     }
 }

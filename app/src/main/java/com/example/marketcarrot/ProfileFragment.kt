@@ -69,7 +69,7 @@ class ProfileFragment : Fragment() {
     }
 
     fun KakaoLoginCheck(viewModel: LoginSplash) {
-        val isLoggedIn = viewModel.isLoggedIn.asStateFlow()
+//        val isLoggedIn = viewModel.isLoggedIn.asStateFlow()
 
         binding.btnKakaoOut.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {

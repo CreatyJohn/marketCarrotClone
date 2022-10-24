@@ -1,5 +1,6 @@
 package com.example.marketcarrot
 
+import com.example.marketcarrot.location.MyLocation
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -18,4 +19,13 @@ interface KakaoApiService {
         @Header("Authorization") key: String,
         @Query("query") address: String
     ): Call<KakaoData>
+}
+
+interface KakaoMyLocalService {
+    @GET("v2/local/geo/coord2regioncode.json")
+    fun getKakaoMyAddress(
+        @Header("Authorization") key: String,
+        @Query("query") longitude: String,
+        @Query("query") latitude: String
+    ): Call<MyLocation>
 }

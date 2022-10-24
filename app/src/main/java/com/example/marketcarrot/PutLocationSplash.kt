@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import com.example.marketcarrot.databinding.ActivityPutlocationSplashBinding
+import kotlinx.android.synthetic.main.address_data.*
 import retrofit2.Call
 import retrofit2.Response
 
@@ -26,11 +27,12 @@ class PutLocationSplash : AppCompatActivity() {
         val search = binding.etSearch.text
 
         binding.btnMylocation.setOnClickListener {
+            datas.removeAll(datas)
             callKakaoKeyword("${search}")
-            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 
+    /** 카카오 API를 req, res 하는 곳 */
     fun callKakaoKeyword (address: String) {
         val kakao = MutableLiveData<KakaoData>()
 
@@ -55,6 +57,7 @@ class PutLocationSplash : AppCompatActivity() {
             })
     }
 
+    /** 배열 담는(추가하는) 곳 */
     private fun initRecycler() {
         addressDataRVAdapter = AddressDataRVAdapter(this)
         binding.rvAddress.adapter = addressDataRVAdapter
@@ -67,6 +70,7 @@ class PutLocationSplash : AppCompatActivity() {
 
     }
 
+    /** 외부에서 배열에 추가할 수 있게 사용하는 곳 */
     fun addTask(address: String) {
         //editText에서 사용자가쓴 할일을 가져온다.
         val todo = AddressData(address)

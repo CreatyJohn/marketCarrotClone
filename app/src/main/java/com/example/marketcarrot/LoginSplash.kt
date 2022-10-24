@@ -47,7 +47,7 @@ class LoginSplash : AppCompatActivity() {
             if (isLoggedIn.value == true){
                 startMain.invoke()
             } else {
-                startActivity(Intent(this, PutLocationSplash::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
             }
         }
     }

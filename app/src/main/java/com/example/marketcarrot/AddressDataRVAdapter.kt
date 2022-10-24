@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kakao.sdk.common.KakaoSdk.init
 
 /** 리스트 데이터를 넘겨받아야 한다. */
 class AddressDataRVAdapter(private val context: Context) : RecyclerView.Adapter<AddressDataRVAdapter.ViewHolder>() {
@@ -24,10 +26,12 @@ class AddressDataRVAdapter(private val context: Context) : RecyclerView.Adapter<
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val tvAddress: TextView = itemView.findViewById(R.id.tv_address)
+        private val tvAddress: Button = itemView.findViewById(R.id.btn_address)
 
         fun bind(item: AddressData) {
             tvAddress.text = item.Address
+
+
         }
     }
 

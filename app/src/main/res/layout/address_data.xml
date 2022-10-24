@@ -22,8 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_address"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_address"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:text="서울 강동구 우리집"
