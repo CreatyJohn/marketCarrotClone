@@ -153,7 +153,11 @@ class MainActivity : AppCompatActivity() {
         }
         // 기기의 위치에 관한 정기 업데이트를 요청하는 메서드 실행
         // 지정한 루퍼 스레드(Looper.myLooper())에서 콜백(mLocationCallback)으로 위치 업데이트를 요청
-        mFusedLocationProviderClient!!.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper())
+        Looper.myLooper()?.let {
+            mFusedLocationProviderClient!!.requestLocationUpdates(mLocationRequest, mLocationCallback,
+                it
+            )
+        }
     }
 
     /** 시스템으로 부터 위치 정보를 콜백으로 받음 */
@@ -183,8 +187,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<MyLocation>, response: Response<MyLocation>) {
                     mylocation.value = response.body()
                     try {
-                        Log.i("myLocation", "${mylocation.value!!.documents[0].address_name}")
-                        Log.i("myLocation", mylocation.value!!.documents[0].address_name)
+                        Log.i("myLocation", "${response.body()}")
                     } catch (e:Exception) {
                         e.printStackTrace()
                     }
@@ -228,36 +231,33 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        Toast.makeText(this, "onStart",Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "onStart",Toast.LENGTH_SHORT).show()
     }
 
     override fun onResume() {
         super.onResume()
 
-        Toast.makeText(this, "onResume",Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "onResume",Toast.LENGTH_SHORT).show()
     }
 
     override fun onRestart() {
         super.onRestart()
 
-        Toast.makeText(this, "onRestart",Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "onRestart",Toast.LENGTH_SHORT).show()
     }
 
     /** Remove regist,User Data, Stop GPSTrackerService Data */
     override fun onStop() {
         super.onStop()
 
-        Toast.makeText(this, "onStop",Toast.LENGTH_SHORT).show()
-
-
-
+//        Toast.makeText(this, "onStop",Toast.LENGTH_SHORT).show()
     }
 
     /** Remove regist,User Data */
     override fun onDestroy() {
         super.onDestroy()
 
-        Toast.makeText(this, "onDestroy",Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "onDestroy",Toast.LENGTH_SHORT).show()
     }
 
     fun View.show() {
