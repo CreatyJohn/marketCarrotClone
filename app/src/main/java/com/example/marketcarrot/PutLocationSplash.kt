@@ -1,11 +1,9 @@
 package com.example.marketcarrot
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import com.example.marketcarrot.databinding.ActivityPutlocationSplashBinding
-import kotlinx.android.synthetic.main.address_data.*
 import retrofit2.Call
 import retrofit2.Response
 
