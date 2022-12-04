@@ -43,7 +43,7 @@ class PutLocationSplash : AppCompatActivity() {
 
                     try {
                         for (i in 0..count) {
-                            addTask("${kakao.value!!.documents[i].address_name}")
+                            addTask(kakao.value!!.documents[i].address_name)
                         }
                     } catch (e: Exception){
                         e.printStackTrace()

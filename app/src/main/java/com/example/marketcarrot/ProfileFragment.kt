@@ -37,7 +37,7 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         // fragment에서 ById 대신에 사용하는 ViewBinding을 되게 하는 핵심 코드
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        getActivity()?.let { Glide.with(it) }
+//        getActivity()?.let { Glide.with(it) }
 
         // Kakao SDK 초기화
         activity?.let { KakaoSdk.init(it, "21de26b357c402d6376672dcbda85911") }

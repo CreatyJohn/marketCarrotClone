@@ -45,12 +45,4 @@ class HomeFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
-    fun View.show() {
-        this.visibility= View.VISIBLE
-    }
-    fun View.makeInvisible() {
-        this.visibility= View.INVISIBLE
-    }
-
 }
